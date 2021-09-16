@@ -14,8 +14,7 @@ namespace Server.Multis
     {
         public static void Initialize()
         {
-            if(TileData.ItemTable.Length >= 0x574A)
-                TileData.ItemTable[0x574A].Flags = TileFlag.None;
+            TileData.ItemTable[0x574A].Flags = TileFlag.None;
         }
 
         public static int MaxCharges = 1000;

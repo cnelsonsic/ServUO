@@ -16,8 +16,7 @@ namespace Server.Engines.Doom
 		
 		public static void Initialize()
 		{
-            if (Instance != null)
-                Instance.CheckDoors();
+            Instance.CheckDoors();
 		}
 
         private Timer m_Timer;

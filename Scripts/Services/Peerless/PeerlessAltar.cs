@@ -456,21 +456,15 @@ namespace Server.Items
             // teleport party to exit if not already there
             if (Fighters != null)
             {
-                var fighters = new List<Mobile>(Fighters);
-
-                fighters.ForEach(x => Exit(x));
-
-                ColUtility.Free(fighters);
+                Fighters.ForEach(x => Exit(x));
+                Fighters.Clear();
             }
 
             // delete master keys
             if (MasterKeys != null)
             {
-                var keys = new List<Item>(MasterKeys);
-
-                keys.ForEach(x => x.Delete());
-
-                ColUtility.Free(keys);
+                MasterKeys.ForEach(x => x.Delete());
+                MasterKeys.Clear();
             }
 
             // delete any remaining helpers
@@ -480,9 +474,6 @@ namespace Server.Items
             Peerless = null;
 
             Deadline = DateTime.MinValue;
-
-            ColUtility.Free(Fighters);
-            ColUtility.Free(MasterKeys);
         }
 
         public virtual void Exit(Mobile fighter)

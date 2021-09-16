@@ -35,6 +35,12 @@ namespace Server
             {
                 activeSpeed = min;
             }
+			
+			if (bc.ControlMaster != null)
+			{
+				// Controlled creatures move ten times as fast.
+				activeSpeed = activeSpeed / 10;
+			}
 
             passiveSpeed = activeSpeed * 2;
 
@@ -192,7 +198,9 @@ namespace Server
 					typeof(FactionPaladin), typeof(FactionHenchman), typeof(FactionMercenary), typeof(FactionNecromancer),
 					typeof(FactionSorceress), typeof(FactionWizard), typeof(FactionBerserker), typeof(FactionPaladin),
 					typeof(Leviathan), typeof(FireBeetle), typeof(FanDancer), typeof(FactionDeathKnight), typeof(ClockworkExodus),
-					typeof(Navrey), typeof(Raptor), typeof(TrapdoorSpider)
+					typeof(Navrey), typeof(Raptor), typeof(TrapdoorSpider), typeof(CoMWarHorse),
+					typeof(MinaxWarHorse), typeof(SLWarHorse), typeof(TBWarHorse), typeof(PackHorse),
+					typeof(PackLlama), typeof(Horse), 
 				}),
 			// Extremely Fast
             new SpeedInfo(0.08, 0.20, new[] {typeof(Miasma), typeof(Semidar), typeof(Mephitis)}),
@@ -215,11 +223,10 @@ namespace Server
 					typeof(Gazer), typeof(IceSerpent), typeof(GiantRat), typeof(GiantSerpent), typeof(GiantSpider), typeof(GiantToad),
 					typeof(Goat), typeof(GoldenElemental), typeof(Gorilla), typeof(GreatHart), typeof(GreyWolf), typeof(GrizzlyBear),
 					typeof(Guardian), typeof(Harpy), typeof(Harrower), typeof(HellHound), typeof(Hind), typeof(HordeMinion),
-					typeof(Horse), typeof(IceElemental), typeof(IceFiend), typeof(IceSnake), typeof(Imp), typeof(JackRabbit),
+					typeof(IceElemental), typeof(IceFiend), typeof(IceSnake), typeof(Imp), typeof(JackRabbit),
 					typeof(Kirin), typeof(Kraken), typeof(PredatorHellCat), typeof(LavaLizard), typeof(LavaSerpent), typeof(LavaSnake),
 					typeof(Lizardman), typeof(Llama), typeof(Mongbat), typeof(StrongMongbat), typeof(MountainGoat), typeof(Orc),
-					typeof(OrcBomber), typeof(OrcBrute), typeof(OrcCaptain), typeof(OrcishLord), typeof(OrcishMage), typeof(PackHorse),
-					typeof(PackLlama), typeof(Panther), typeof(Pig), typeof(PlagueSpawn), typeof(PolarBear), typeof(Rabbit),
+					typeof(OrcBomber), typeof(OrcBrute), typeof(OrcCaptain), typeof(OrcishLord), typeof(OrcishMage), typeof(Panther), typeof(Pig), typeof(PlagueSpawn), typeof(PolarBear), typeof(Rabbit),
 					typeof(Ratman), typeof(RatmanArcher), typeof(RatmanMage), typeof(RedSolenInfiltratorQueen),
 					typeof(RedSolenInfiltratorWarrior), typeof(RedSolenQueen), typeof(RedSolenWarrior), typeof(RedSolenWorker),
 					typeof(RidableLlama), typeof(Ridgeback), typeof(Scorpion), typeof(SeaSerpent), typeof(SerpentineDragon),
@@ -228,8 +235,7 @@ namespace Server
 					typeof(Snake), typeof(SnowLeopard), typeof(SpectralArmour), typeof(Spectre), typeof(StoneGargoyle),
 					typeof(StoneHarpy), typeof(SwampDragon), typeof(ScaledSwampDragon), typeof(SwampTentacle), typeof(TerathanAvenger),
 					typeof(TerathanDrone), typeof(TerathanMatriarch), typeof(TerathanWarrior), typeof(TimberWolf), typeof(Titan),
-					typeof(Troll), typeof(Unicorn), typeof(ValoriteElemental), typeof(VeriteElemental), typeof(CoMWarHorse),
-					typeof(MinaxWarHorse), typeof(SLWarHorse), typeof(TBWarHorse), typeof(WaterElemental), typeof(WhippingVine),
+					typeof(Troll), typeof(Unicorn), typeof(ValoriteElemental), typeof(VeriteElemental), typeof(WaterElemental), typeof(WhippingVine),
 					typeof(WhiteWolf), typeof(Wraith), typeof(Wyvern), typeof(KhaldunZealot), typeof(KhaldunSummoner),
 					typeof(SavageRidgeback), typeof(LichLord), typeof(SkeletalKnight), typeof(SummonedDaemon),
 					typeof(SummonedEarthElemental), typeof(SummonedWaterElemental), typeof(SummonedFireElemental), typeof(MeerWarrior),
